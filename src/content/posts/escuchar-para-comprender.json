@@ -1,0 +1,12 @@
+{
+  "slug": "escuchar-para-comprender",
+  "title": "Escuchar para comprender, no para responder.",
+  "summary": "Una conversación en vídeo sobre el valor de prestar atención. Ejemplo de publicación con reproductor bajo demanda.",
+  "date": "2026-09-15",
+  "type": "video",
+  "published": true,
+  "image": "/media/escucha.svg",
+  "imageAlt": "Líneas concéntricas que representan la escucha.",
+  "url": "https://www.youtube.com/watch?v=cSohjlYQI2A",
+  "body": "## Una pausa para escuchar\n\nEsta entrada muestra cómo añadir un vídeo pegando su enlace. El vídeo externo es una referencia de demostración y no pertenece a Entre.\n\nEl reproductor solo se conecta con el proveedor cuando pulsas el botón para cargarlo."
+}

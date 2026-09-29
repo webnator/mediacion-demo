@@ -1,0 +1,190 @@
+media:
+  input: public/media
+  output: /media
+content:
+  - name: site
+    label: Página principal
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - name: name
+        label: Nombre de la marca
+        type: string
+        required: true
+      - name: tagline
+        label: Descripción de la marca
+        type: string
+        required: true
+      - name: seoTitle
+        label: Título SEO
+        type: text
+        required: true
+      - name: seoDescription
+        label: Descripción SEO
+        type: text
+        required: true
+      - name: heroTitle
+        label: Titular principal
+        type: text
+        required: true
+      - name: heroText
+        label: Introducción
+        type: text
+        required: true
+      - name: heroCta
+        label: Texto del botón
+        type: string
+        required: true
+      - name: servicesVisible
+        label: Mostrar servicios
+        type: boolean
+      - name: servicesTitle
+        label: Título de servicios
+        type: text
+        required: true
+      - name: services
+        label: Servicios
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Título
+            type: text
+            required: true
+          - name: text
+            label: Texto
+            type: text
+            required: true
+          - name: detail
+            label: Detalle
+            type: string
+            required: true
+      - name: aboutVisible
+        label: Mostrar quiénes somos
+        type: boolean
+      - name: aboutTitle
+        label: Título de quiénes somos
+        type: text
+        required: true
+      - name: aboutText
+        label: Presentación
+        type: text
+        required: true
+      - name: aboutNote
+        label: Frase destacada
+        type: text
+        required: true
+      - name: processVisible
+        label: Mostrar cómo trabajamos
+        type: boolean
+      - name: processTitle
+        label: Título del proceso
+        type: text
+        required: true
+      - name: steps
+        label: Pasos del proceso
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Título
+            type: text
+            required: true
+          - name: text
+            label: Texto
+            type: text
+            required: true
+      - name: newsVisible
+        label: Mostrar actualidad en portada y menú
+        type: boolean
+      - name: newsTitle
+        label: Título de actualidad
+        type: text
+        required: true
+      - name: contactTitle
+        label: Título de contacto
+        type: text
+        required: true
+      - name: contactText
+        label: Texto de contacto
+        type: text
+        required: true
+      - name: email
+        label: Correo de contacto
+        type: string
+        required: true
+      - name: location
+        label: Ubicación
+        type: string
+        required: true
+      - name: contactEnabled
+        label: Activar enlace de correo (desactivado en demo)
+        type: boolean
+  - name: posts
+    label: Publicaciones
+    type: collection
+    path: src/content/posts
+    format: json
+    filename: "{fields.slug}.json"
+    view:
+      primary: title
+      fields:
+        - title
+        - type
+        - published
+        - date
+      sort:
+        - date
+      default:
+        sort: date
+        order: desc
+    fields:
+      - name: slug
+        label: Identificador de URL (minúsculas y guiones)
+        type: string
+        required: true
+      - name: title
+        label: Título
+        type: string
+        required: true
+      - name: summary
+        label: Resumen
+        type: text
+        required: true
+      - name: date
+        label: Fecha
+        type: date
+        required: true
+        options:
+          format: yyyy-MM-dd
+      - name: type
+        label: Formato
+        type: select
+        required: true
+        options:
+          values:
+            - value: articulo
+              label: Artículo
+            - value: enlace
+              label: Enlace externo
+            - value: video
+              label: Vídeo
+            - value: podcast
+              label: Podcast
+      - name: published
+        label: Publicado
+        type: boolean
+        default: false
+      - name: image
+        label: Portada
+        type: image
+      - name: imageAlt
+        label: Descripción de la imagen
+        type: string
+      - name: url
+        label: Enlace externo / YouTube / Spotify
+        type: string
+      - name: body
+        label: Contenido
+        type: rich-text

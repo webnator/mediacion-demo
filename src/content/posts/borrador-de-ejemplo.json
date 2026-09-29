@@ -1,0 +1,12 @@
+{
+  "slug": "borrador-de-ejemplo",
+  "title": "Una idea que todavía estamos trabajando.",
+  "summary": "Este borrador no aparece en la web pública. Activa Publicado para probar el flujo.",
+  "date": "2026-09-29",
+  "type": "articulo",
+  "published": false,
+  "image": "",
+  "imageAlt": "",
+  "url": "",
+  "body": "## Tu siguiente publicación\n\nCambia este texto y activa Publicado desde el taller local."
+}

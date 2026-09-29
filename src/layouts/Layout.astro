@@ -1,0 +1,17 @@
+---
+import '@fontsource-variable/dm-sans';
+import '@fontsource-variable/newsreader';
+import '../styles/global.css';
+import Mark from '../components/Mark.astro';
+import {site} from '../lib/content';
+const { title=site.seoTitle, description=site.seoDescription }=Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html><html lang="es"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>{title}</title><meta name="description" content={description}/><meta name="robots" content="noindex,nofollow"/><link rel="canonical" href={canonical}/><link rel="icon" href="/favicon.svg" type="image/svg+xml"/><meta name="theme-color" content="#eeeae1"/><meta property="og:title" content={title}/><meta property="og:description" content={description}/><meta property="og:type" content="website"/><meta property="og:url" content={canonical}/><meta property="og:image" content={new URL('/media/conversacion.svg', Astro.site)}/></head><body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<div class="demo-bar"><span>Entre es una marca ficticia. Estás explorando una demo.</span>{import.meta.env.DEV && <a href="/__taller">Abrir taller de contenido <span aria-hidden="true">↗</span></a>}</div>
+<header class="header wrap"><a class="brand" href="/" aria-label={`${site.name}, inicio`}><Mark/><span>{site.name}<span class="brand-dot">.</span></span></a><span class="brand-tagline">{site.tagline}</span><nav class="desktop-nav" aria-label="Principal">{site.servicesVisible && <a href="/#acompanamos">Qué hacemos</a>}{site.aboutVisible && <a href="/#nosotros">Nuestra mirada</a>}{site.newsVisible && <a href="/actualidad/">Actualidad</a>}<a class="nav-contact" href="/#contacto">Hablemos <span aria-hidden="true">↗</span></a></nav><details class="mobile-nav"><summary>Menú</summary><nav aria-label="Móvil">{site.servicesVisible && <a href="/#acompanamos">Qué hacemos</a>}{site.aboutVisible && <a href="/#nosotros">Nuestra mirada</a>}{site.newsVisible && <a href="/actualidad/">Actualidad</a>}<a href="/#contacto">Hablemos</a></nav></details></header>
+<main id="contenido"><slot/></main>
+<footer class="footer wrap"><a class="brand" href="/"><Mark/><span>{site.name}.</span></a><p>{site.tagline}<br/>{site.location}</p><div><a href="/demo/">Acerca de esta demo</a><span>Una forma de volver a encontrarnos.</span></div></footer>
+<script>document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.mobile-nav')?.removeAttribute('open')));</script>
+</body></html>

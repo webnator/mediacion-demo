@@ -1,0 +1,12 @@
+{
+  "slug": "recursos-mediacion",
+  "title": "Un lugar para seguir explorando la mediación.",
+  "summary": "Una referencia externa para acercarse a la mediación. Así se vería un enlace recomendado por el equipo.",
+  "date": "2026-09-08",
+  "type": "enlace",
+  "published": true,
+  "image": "/media/puentes.svg",
+  "imageAlt": "Dos arcos verdes se encuentran sobre un fondo arena.",
+  "url": "https://e-justice.europa.eu/",
+  "body": "## Para seguir leyendo\n\nEl Portal Europeo de e-Justicia recoge información sobre justicia y vías de resolución de conflictos.\n\nEsta publicación demuestra el formato de enlace externo. La selección editorial es ficticia y no implica colaboración con el sitio enlazado."
+}

@@ -1,0 +1,55 @@
+{
+  "name": "entre",
+  "tagline": "Mediación para organizaciones",
+  "seoTitle": "Entre — Volver a entenderse",
+  "seoDescription": "Un espacio para abordar diferencias, recuperar el diálogo y construir acuerdos en tu organización. Demo ficticia de mediación corporativa.",
+  "heroTitle": "Las diferencias existen.\nEl encuentro también.",
+  "heroText": "Acompañamos a empresas y equipos a transformar conversaciones difíciles en acuerdos que permiten seguir adelante.",
+  "heroCta": "Hablemos de lo que pasa",
+  "servicesVisible": true,
+  "servicesTitle": "Cuando hablar ya no es suficiente, cambiemos la conversación.",
+  "services": [
+    {
+      "title": "Entre personas",
+      "text": "Tensiones que se repiten, conversaciones pendientes o relaciones de trabajo que necesitan otro punto de partida.",
+      "detail": "Conflictos en equipos · Relaciones laborales"
+    },
+    {
+      "title": "Entre socios",
+      "text": "Perspectivas distintas sobre una misma empresa. Un espacio para ordenar intereses y explorar cómo continuar.",
+      "detail": "Socios y dirección · Empresa familiar"
+    },
+    {
+      "title": "Antes del conflicto",
+      "text": "Herramientas para escuchar mejor, conversar a tiempo y cuidar las relaciones que sostienen una organización.",
+      "detail": "Prevención · Talleres para equipos"
+    }
+  ],
+  "aboutVisible": true,
+  "aboutTitle": "Una mirada externa.\nUn espacio compartido.",
+  "aboutText": "Entre nace de una idea sencilla: detrás de cada desacuerdo hay personas que necesitan ser escuchadas. Facilitamos conversaciones con estructura, atención y respeto por los distintos puntos de vista.",
+  "aboutNote": "No llegamos con la respuesta. Ayudamos a que podáis construirla.",
+  "processVisible": true,
+  "processTitle": "Un primer paso, sin tener todas las respuestas.",
+  "steps": [
+    {
+      "title": "Nos cuentas",
+      "text": "Escuchamos qué está pasando y qué necesitas aclarar."
+    },
+    {
+      "title": "Trazamos el espacio",
+      "text": "Acordamos quién participa, cómo conversamos y qué queremos abordar."
+    },
+    {
+      "title": "Abrimos posibilidades",
+      "text": "Exploramos intereses comunes y concretamos los siguientes pasos."
+    }
+  ],
+  "newsVisible": true,
+  "newsTitle": "Ideas para encontrarnos.",
+  "contactTitle": "Todo empieza con\nuna conversación.",
+  "contactText": "No hace falta tener claro cómo resolverlo para empezar a hablar.",
+  "email": "hola@entre.example",
+  "location": "Madrid · Presencial y online",
+  "contactEnabled": false
+}
