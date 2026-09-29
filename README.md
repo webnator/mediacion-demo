@@ -39,16 +39,16 @@ El taller permite editar la portada, cambiar visibilidad, crear publicaciones y 
 
 ## Archivos que vas a tocar
 
-| Archivo | Para qué sirve |
-|---|---|
-| `src/data/site.json` | Textos, servicios, pasos, contacto y visibilidad de la landing |
-| `src/content/posts/*.json` | Publicaciones; `published: false` excluye la página pública |
-| `.pages.yml` | Campos y colecciones del panel real de Pages CMS |
-| `src/lib/schema.ts` | Validación de contenido en desarrollo y compilación |
-| `src/pages/index.astro` | Estructura de la landing |
-| `src/styles/global.css` | Diseño responsive y tokens |
-| `public/media/` | Imágenes y geometrías de ejemplo |
-| `tools/` | Taller local, nunca desplegado |
+| Archivo                    | Para qué sirve                                                 |
+| -------------------------- | -------------------------------------------------------------- |
+| `src/data/site.json`       | Textos, servicios, pasos, contacto y visibilidad de la landing |
+| `src/content/posts/*.json` | Publicaciones; `published: false` excluye la página pública    |
+| `.pages.yml`               | Campos y colecciones del panel real de Pages CMS               |
+| `src/lib/schema.ts`        | Validación de contenido en desarrollo y compilación            |
+| `src/pages/index.astro`    | Estructura de la landing                                       |
+| `src/styles/global.css`    | Diseño responsive y tokens                                     |
+| `public/media/`            | Imágenes y geometrías de ejemplo                               |
+| `tools/`                   | Taller local, nunca desplegado                                 |
 
 Para añadir un campo: actualiza `.pages.yml`, el esquema, el JSON y la plantilla. La estructura visual permanece en código.
 

@@ -126,7 +126,7 @@ content:
     type: collection
     path: src/content/posts
     format: json
-    filename: "{fields.slug}.json"
+    filename: '{fields.slug}.json'
     view:
       primary: title
       fields:

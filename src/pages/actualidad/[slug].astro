@@ -1,9 +1,94 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import {getPosts,site,labels,dateLabel,renderBody,embedUrl} from '../../lib/content';
-export async function getStaticPaths(){return (await getPosts()).map(post=>({params:{slug:post.slug},props:{post}}));}
-const {post}=Astro.props;
-const embed=embedUrl(post.url);
+import {
+  getPosts,
+  site,
+  labels,
+  dateLabel,
+  renderBody,
+  embedUrl,
+} from '../../lib/content';
+export async function getStaticPaths() {
+  return (await getPosts()).map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+const { post } = Astro.props;
+const embed = embedUrl(post.url);
 ---
-<Layout title={`${post.title} — ${site.name}`} description={post.summary}><article class="article wrap section"><a class="text-link" href="/actualidad/">Volver a actualidad</a><div class="article-heading"><div class="post-meta"><span>{labels[post.type]}</span><time datetime={post.date}>{dateLabel(post.date)}</time></div><h1>{post.title}</h1><p class="intro">{post.summary}</p></div>{post.image&&<img class="article-cover" src={post.image} alt={post.imageAlt} width="1200" height="600"/>}<div class="prose" set:html={renderBody(post.body)}/>{['video','podcast'].includes(post.type)&&embed&&<div class="embed-placeholder prose" data-embed={embed}><p>El reproductor se conectará a {post.type==='podcast'?'Spotify o YouTube':'YouTube o Spotify'} al cargarlo.</p><button class="button" data-load-embed>Cargar reproductor</button></div>}{post.url&&<p class="prose"><a class="text-link" href={post.url} target="_blank" rel="noopener noreferrer">{post.type==='enlace'?'Visitar la fuente':'Abrir contenido original'} <span aria-hidden="true">↗</span></a></p>}<div class="article-end prose"><p>¿Hay una conversación pendiente en tu organización?</p><a class="text-link" href="/#contacto">Podemos empezar por escucharos <span aria-hidden="true">↗</span></a></div></article></Layout>
-<script>document.querySelectorAll<HTMLButtonElement>('[data-load-embed]').forEach(button=>button.addEventListener('click',()=>{const parent=button.closest<HTMLElement>('[data-embed]')!;const iframe=document.createElement('iframe');iframe.src=parent.dataset.embed!;iframe.title='Reproductor de la publicación';iframe.allow='encrypted-media; fullscreen; picture-in-picture';iframe.referrerPolicy='strict-origin-when-cross-origin';iframe.allowFullscreen=true;parent.replaceChildren(iframe);}));</script>
+
+<Layout title={`${post.title} — ${site.name}`} description={post.summary}>
+  <article class="article wrap section">
+    <a class="text-link" href="/actualidad/">
+      Volver a actualidad
+    </a>
+    <div class="article-heading">
+      <div class="post-meta">
+        <span>{labels[post.type]}</span>
+        <time datetime={post.date}>{dateLabel(post.date)}</time>
+      </div>
+      <h1>{post.title}</h1>
+      <p class="intro">{post.summary}</p>
+    </div>
+    {post.image && (
+      <img
+        class="article-cover"
+        src={post.image}
+        alt={post.imageAlt}
+        width="1200"
+        height="600"
+      />
+    )}
+    <div class="prose" set:html={renderBody(post.body)} />
+    {['video', 'podcast'].includes(post.type) && embed && (
+      <div class="embed-placeholder prose" data-embed={embed}>
+        <p>
+          El reproductor se conectará a{' '}
+          {post.type === 'podcast' ? 'Spotify o YouTube' : 'YouTube o Spotify'}{' '}
+          al cargarlo.
+        </p>
+        <button class="button" data-load-embed>
+          Cargar reproductor
+        </button>
+      </div>
+    )}
+    {post.url && (
+      <p class="prose">
+        <a
+          class="text-link"
+          href={post.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {post.type === 'enlace'
+            ? 'Visitar la fuente'
+            : 'Abrir contenido original'}{' '}
+          <span aria-hidden="true">↗</span>
+        </a>
+      </p>
+    )}
+    <div class="article-end prose">
+      <p>¿Hay una conversación pendiente en tu organización?</p>
+      <a class="text-link" href="/#contacto">
+        Podemos empezar por escucharos <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+  </article>
+</Layout>
+<script>
+  document
+    .querySelectorAll<HTMLButtonElement>('[data-load-embed]')
+    .forEach((button) =>
+      button.addEventListener('click', () => {
+        const parent = button.closest<HTMLElement>('[data-embed]')!;
+        const iframe = document.createElement('iframe');
+        iframe.src = parent.dataset.embed!;
+        iframe.title = 'Reproductor de la publicación';
+        iframe.allow = 'encrypted-media; fullscreen; picture-in-picture';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+        parent.replaceChildren(iframe);
+      }),
+    );
+</script>

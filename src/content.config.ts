@@ -1,3 +1,7 @@
-import {defineCollection} from 'astro:content';
-import {glob} from 'astro/loaders';
-export const collections={posts:defineCollection({loader:glob({pattern:'*.json',base:'./src/content/posts'})})};
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+export const collections = {
+  posts: defineCollection({
+    loader: glob({ pattern: '*.json', base: './src/content/posts' }),
+  }),
+};
