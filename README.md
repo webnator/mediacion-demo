@@ -1,4 +1,4 @@
-# Entre — Astro + Pages CMS
+# Entre , Astro + Pages CMS
 
 POC de una web de mediación corporativa. Marca, logo y textos ficticios. Incluye landing responsive, listado filtrable y páginas de artículos, enlaces, vídeo y podcast. Tres publicaciones visibles y un borrador.
 
@@ -55,9 +55,9 @@ Para añadir un campo: actualiza `.pages.yml`, el esquema, el JSON y la plantill
 ## Conectar Pages CMS real
 
 1. El repositorio debe estar en GitHub (puede ser privado).
-2. Entra en https://app.pagescms.org con la cuenta **webnator**.
+2. Entra en https://app.pagescms.org con tu cuenta de GitHub.
 3. Autoriza la aplicación de GitHub **solo para este repositorio** cuando lo solicite.
-4. Selecciona `webnator/mediacion-demo`, rama `main`.
+4. Selecciona tu copia de este repositorio y su rama principal.
 5. Pages CMS leerá `.pages.yml`: verás Página principal y Publicaciones.
 6. Edita y guarda. Esto crea un commit en GitHub; para verlo en tu copia local ejecuta `git pull --ff-only` y recarga la web. No lo verás en local automáticamente.
 
@@ -90,3 +90,7 @@ Antes de un lanzamiento real: sustituir marca y contenido, configurar dominio/co
 - El contenido Markdown se sanea antes de renderizarlo.
 - Al cambiar un slug cambia su URL; en una web real añade una redirección si la URL anterior ya estaba publicada.
 - Las fuentes usan sus licencias OFL distribuidas en los paquetes de Fontsource.
+
+## Licencia
+
+Código y contenido ficticio de esta demo bajo licencia MIT, ver [LICENSE](LICENSE). Las dependencias y fuentes mantienen sus propias licencias.
